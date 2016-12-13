@@ -31,3 +31,32 @@ def drop_db
     DB.execute("DROP TABLE #{table}")
   end
 end
+
+def seed_db
+  kanye = Artist.create(name: "Kanye")
+  jay_z = Artist.create(name: "Jay-Z")
+  adele = Artist.create(name: "Adele")
+
+
+  rap = Genre.create(name: "rap")
+  hip_hop = Genre.create(name: "hip hop")
+  pop = Genre.create(name: "pop")
+
+  song_1 = Song.create(name: "Stronger")
+  song_2 = Song.create(name: "Brooklyn we go hard")
+  song_3 = Song.create(name: "Rolling in the deep")
+
+  song_1.artist = kanye
+  song_2.artist = jay_z
+  song_3.artist = adele
+
+  song_1.genre = rap
+  song_2.genre = hip_hop
+  song_3.genre = pop
+
+  song_1.save
+  song_2.save
+  song_3.save
+
+end   
+

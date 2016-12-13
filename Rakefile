@@ -13,6 +13,10 @@ namespace :db do
   task :drop => :environment do 
     drop_db
   end
+
+  task :seed => :environment do 
+    seed_db
+  end  
 end
 
 task :console => :environment do
